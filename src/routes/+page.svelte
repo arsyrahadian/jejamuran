@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import Onboarding from "./Onboarding.svelte";
+</script>
+
+<main>
+    <Onboarding />
+</main>
+
+<style>
+    main {
+        margin: 16px;
+    }
+</style>
