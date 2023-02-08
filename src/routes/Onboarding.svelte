@@ -4,7 +4,7 @@
 </script>
 
 <div class="wrapper">
-    <img src={onboarding_img} alt="Selamat datang" />
+    <img src={onboarding_img} class="main-img" alt="Selamat datang" />
 
     <div class="title">
         <section class="header">
@@ -36,6 +36,10 @@
 <style>
     .wrapper {
         position: relative;
+    }
+
+    .wrapper .main-img {
+        margin-inline: auto;
     }
 
     .wrapper .title {
