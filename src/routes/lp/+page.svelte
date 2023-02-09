@@ -2,6 +2,7 @@
     import { fade } from 'svelte/transition'
     import Navbar from '../Navbar.svelte'
     import MushroomList from '../MushroomList.svelte'
+    import Pricelist from '../Pricelist.svelte'
 
     let openSidebar;
 </script>
@@ -13,6 +14,7 @@
 
 <main>
     <MushroomList />
+    <Pricelist />
 </main>
 
 <style>
