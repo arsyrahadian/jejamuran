@@ -3,6 +3,7 @@
     import Navbar from '../Navbar.svelte'
     import MushroomList from '../MushroomList.svelte'
     import Pricelist from '../Pricelist.svelte'
+    import Footer from '../Footer.svelte'
 
     let openSidebar;
 </script>
@@ -15,6 +16,7 @@
 <main>
     <MushroomList />
     <Pricelist />
+    <Footer />
 </main>
 
 <style>
