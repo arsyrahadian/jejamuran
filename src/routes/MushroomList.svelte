@@ -13,6 +13,7 @@
     import jamurLingzhiBig from '$lib/images/detail-jamur-lingzhi.png'
 
     import Modal from './Modal.svelte'
+    import Headline from './Headline.svelte'
 
     const mushrooms = [
         {
@@ -75,9 +76,7 @@
 </script>
 
 <section class="wrapper">
-    <div class="title" style:margin-top="30px">
-        <h2>Jenis-Jenis <br> <span>Jamur</span></h2>
-    </div>
+    <Headline title="Jenis-Jenis" subtitle="Jamur" marginTop="30px" />
 
     <div class="list-container">
         <ul class="list">
@@ -87,7 +86,7 @@
                         <div class="list-img">
                             <img src={img} alt={title}>
                         </div>
-    
+
                         <div class="list-title">
                             <div class="triangle"></div>
                             <h3 class="title">{title}</h3>
@@ -153,7 +152,7 @@
         line-height: 20px;
         color: white;
     }
-    
+
     .list-item:nth-child(4n+1) .list-title > *, .list-item:nth-child(4n) .list-title > * {
         background-color: var(--clr-accent);
     }

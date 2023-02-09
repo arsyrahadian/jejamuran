@@ -32,19 +32,4 @@
         z-index: 5;
         background: rgba(0, 0, 0, 0.3);
     }
-
-    main :global(.wrapper > .title) {
-        margin-top: 20px;
-    }
-
-    main :global(.wrapper > .title h2) {
-        font-family: 'Yeseva One';
-        font-size: 32px;
-        line-height: 150%;
-        color: #3d3d3d;
-    }
-
-    main :global(.wrapper > .title h2 span) {
-        color: var(--clr-brand);
-    }
 </style>
