@@ -3,11 +3,11 @@
 </script>
 
 <div class="wave">
-    <svg width="360" height="34" viewBox="0 0 360 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 7.91166C0 7.91166 43.5 25.7129 180 7.91166C316.5 -9.88957 360 7.91166 360 7.91166V214H0V7.91166Z" fill="#FFDD19"/>
+    <svg height="34" viewBox="0 0 414 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0 7.9117 C 0 7.9117 48 35 199 16 C 333 -4 380 2 414 11 V 214 H 0 V 7.9117 Z" fill="#FFDD19"/>
     </svg>
-    <svg width="360" height="34" viewBox="0 0 360 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 7.91166C0 7.91166 43.5 25.7129 180 7.91166C316.5 -9.88957 360 7.91166 360 7.91166V214H0V7.91166Z" fill="#136622"/>
+    <svg height="34" viewBox="0 0 414 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0 7.9117 C 0 7.9117 48 35 199 16 C 333 -4 380 2 414 11 V 214 H 0 V 7.9117 Z" fill="#136622"/>
     </svg>
 </div>
 <div id="kontak" class="wrapper">
