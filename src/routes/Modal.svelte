@@ -38,7 +38,6 @@
 
     onMount(() => {
         modal = document.querySelector('.modal')
-        console.log(modal.offsetHeight);
     })
 </script>
 
