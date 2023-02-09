@@ -12,7 +12,7 @@
     }
 
     let modal
-    let initialHeight = '361px'
+    // let initialHeight = '361px'
     let display = '-webkit-box'
     let btnText = 'Baca Selengkapnya'
     const handleClick = e => {
@@ -27,12 +27,15 @@
             btnText = 'Tampilkan Sedikit'
         } else {
             innerModal.scrollTop = 0
-            modal.style.maxHeight = initialHeight
-            setTimeout(() => {
-                display = '-webkit-box'
-                para.style.display = display
-                btnText = 'Baca Selengkapnya'
-            }, 400);
+            // modal.style.maxHeight = initialHeight
+            // setTimeout(() => {
+            //     display = '-webkit-box'
+            //     para.style.display = display
+            //     btnText = 'Baca Selengkapnya'
+            // }, 400);
+            display = '-webkit-box'
+            para.style.display = display
+            btnText = 'Baca Selengkapnya'
         }
     }
 
@@ -75,7 +78,8 @@
 
     .modal {
         width: 100%;
-        max-height: 361px;
+        max-width: 400px;
+        /* max-height: 361px; */
         border-radius: 12px;
         background: white;
         overflow: hidden;
