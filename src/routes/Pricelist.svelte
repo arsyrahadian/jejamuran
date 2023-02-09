@@ -17,6 +17,7 @@
 <style>
     .wrapper {
         margin-top: 16px;
+        padding-bottom: 20px;
     }
 
     .wrapper .headline-container {
