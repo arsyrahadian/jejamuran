@@ -83,6 +83,7 @@
         height: 12px;
         margin-inline: auto;
         clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        position: relative;
     }
 
     .list-title .title {

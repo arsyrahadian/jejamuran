@@ -19,10 +19,14 @@
 
 <style>
     nav {
+        width: 100%;
         display: flex;
         padding: 8px 20px;
-        position: relative;
+        position: sticky;
+        top: 0;
+        background-color: white;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+        z-index: 10;
     }
 
     .menu-icon {

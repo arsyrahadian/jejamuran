@@ -8,7 +8,13 @@
 <aside class:open on:click|self={() => open = !open}>
     <div class="menu">
         <header>
-            <span></span>
+            <button on:click={() => open = !open}>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="#3d3d3d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+            </button>
             <div class="logo">
                 <img src={logo} alt="Logo Jejamuran" />
             </div>
@@ -32,11 +38,11 @@
 
 <style>
     aside {
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 100%;
         left: -100%;
-        z-index: 10;
+        z-index: 15;
         transition: left 0.3s ease-in;
     }
 
@@ -53,11 +59,18 @@
 
     header {
        display: flex;
+       align-items: center;
     }
 
-    header span {
-        width: 24px;
-        height: 24px;
+    header button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    header svg {
+        scale: 1.3;
+        transform: rotate(45deg);
     }
 
     header .logo {
