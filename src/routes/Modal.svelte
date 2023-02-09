@@ -86,6 +86,10 @@
         position: relative;
     }
 
+    .modal header img {
+        width: 100%;
+    }
+
     .modal .modal-header button {
         position: absolute;
         top: 22px;
