@@ -171,7 +171,7 @@
     }
 
     .video-container .desc {
-        margin-top: 14px;
+        padding-block: 14px 24px;
     }
 
     .video-container .desc p {
