@@ -40,6 +40,7 @@
 
     .wrapper .main-img {
         margin-inline: auto;
+        width: 100%;
     }
 
     .wrapper .title {
