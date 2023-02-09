@@ -5,7 +5,7 @@
 
     export let modalData
     export let showModal
-    
+
     const {title, imgBig, desc} = modalData
     const closeModal = () => {
         showModal = false
@@ -79,7 +79,7 @@
         border-radius: 12px;
         background: white;
         overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
+        transition: max-height 0.3s ease-in;
     }
 
     .modal header {

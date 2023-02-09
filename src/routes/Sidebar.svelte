@@ -37,7 +37,7 @@
         height: 100%;
         left: -100%;
         z-index: 10;
-        transition: left 0.3s ease-in-out
+        transition: left 0.3s ease-in;
     }
 
     .open {
