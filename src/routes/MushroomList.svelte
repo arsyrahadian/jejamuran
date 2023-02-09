@@ -134,6 +134,7 @@
     .list-item button {
         background: none;
         border: none;
+        width: 100%;
     }
 
     .list-img > img {
