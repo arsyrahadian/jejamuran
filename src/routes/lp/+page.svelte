@@ -21,7 +21,6 @@
     }
 
     main :global(.wrapper) {
-        padding-inline: 16px;
         background-color: white;
     }
 

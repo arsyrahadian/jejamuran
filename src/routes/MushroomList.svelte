@@ -115,6 +115,10 @@
 </section>
 
 <style>
+    .wrapper {
+        padding-inline: 16px;
+    }
+
     .list-container {
         margin-top: 33px;
     }
