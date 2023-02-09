@@ -76,7 +76,7 @@
 </script>
 
 <section class="wrapper">
-    <Headline title="Jenis-Jenis" subtitle="Jamur" marginTop="30px" />
+    <Headline title="Jenis-Jenis" subtitle="Jamur" paddingTop="30px" />
 
     <div class="list-container">
         <ul class="list">

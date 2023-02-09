@@ -1,16 +1,16 @@
 <script>
     export let title
     export let subtitle
-    export let marginTop
+    export let paddingTop
 </script>
 
-<div class="title" style:margin-top={marginTop}>
+<div class="title" style:padding-top={paddingTop}>
     <h2>{title} <br> <span>{subtitle}</span></h2>
 </div>
 
 <style>
     .title {
-        margin-top: 20px;
+        padding-top: 20px;
     }
 
     .title h2 {
