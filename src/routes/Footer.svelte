@@ -10,7 +10,7 @@
         <path d="M0 7.91166C0 7.91166 43.5 25.7129 180 7.91166C316.5 -9.88957 360 7.91166 360 7.91166V214H0V7.91166Z" fill="#136622"/>
     </svg>
 </div>
-<div class="wrapper">
+<div id="kontak" class="wrapper">
     <div class="title">
         <h2>Hubungi Kami</h2>
     </div>

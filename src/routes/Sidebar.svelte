@@ -23,13 +23,13 @@
         <nav>
             <ul class="menu-list">
                 <li class="menu-item">
-                    <a href="#jenis">Jenis-Jenis Jamur</a>
+                    <a href="#jenis" on:click={() => open = false}>Jenis-Jenis Jamur</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#paket">Paket Agrowisata</a>
+                    <a href="#paket" on:click={() => open = false}>Paket Agrowisata</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#kontak">Hubungi Kami</a>
+                    <a href="#kontak" on:click={() => open = false}>Hubungi Kami</a>
                 </li>
             </ul>
         </nav>

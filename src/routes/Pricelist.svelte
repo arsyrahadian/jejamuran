@@ -4,7 +4,7 @@
     import paket from './paket.js'
 </script>
 
-<div class="wrapper">
+<div id="paket" class="wrapper">
     <div class="headline-container">
         <Headline title="Paket Agrowisata" subtitle="Jejamuran" />
     </div>

@@ -12,7 +12,7 @@
     }
 </script>
 
-<section class="wrapper">
+<section id="jenis" class="wrapper">
     <Headline title="Jenis-Jenis" subtitle="Jamur" paddingTop="30px" />
 
     <div class="list-container">
