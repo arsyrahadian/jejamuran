@@ -108,9 +108,13 @@
         margin-top: 42px;
     }
 
+    .video-container .video {
+        aspect-ratio: 16/9;
+    }
+
     .video-container .video iframe {
         width: 100%;
-        height: 182px;
+        height: 100%;
     }
 
     .video-container .desc {
