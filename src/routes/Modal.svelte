@@ -102,7 +102,7 @@
     }
 
     .modal .inner-modal h4 {
-        font-family: Yeseva One;
+        font-family: 'Yeseva One', cursive;
         font-size: 18px;
         font-weight: 400;
         line-height: 20px;
@@ -123,7 +123,7 @@
         cursor: pointer;
         display: block;
         width: 100%;
-        font-family: 'Poppins';
+        font-family: 'Poppins', sans-serif;
         font-weight: 600;
         font-size: 12px;
         line-height: 180%;

@@ -180,7 +180,7 @@
     }
 
     .video-container .desc p {
-        font-family: 'Poppins';
+        font-family: 'Poppins', sans-serif;
         font-weight: 400;
         font-size: 12px;
         line-height: 180%;

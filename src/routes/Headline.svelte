@@ -14,7 +14,7 @@
     }
 
     .title h2 {
-        font-family: 'Yeseva One';
+        font-family: 'Yeseva One', cursive;
         font-size: 32px;
         line-height: 150%;
         color: #3d3d3d;
