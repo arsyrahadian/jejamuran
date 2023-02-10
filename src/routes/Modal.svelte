@@ -1,49 +1,90 @@
 <script>
-    import { fade } from 'svelte/transition'
-    import { cubicInOut } from 'svelte/easing'
-    import { onMount } from 'svelte'
+    import { afterUpdate } from 'svelte'
 
     export let modalData
     export let showModal
 
     const {title, imgBig, desc} = modalData
+
+    let first = true
+    let backdrop
+    let modal
+    let initialHeight
+    let display
+    let para
+    let expandBtn
+    let btnText = 'Baca Selengkapnya'
+    let isExpanded = false
+
     const closeModal = () => {
-        showModal = false
+        first = true
+        backdrop.classList.add('closing')
+        modal.style.removeProperty('--mh-initial')
+        if (isExpanded) shrink()
     }
 
-    let modal
-    let initialHeight = '361px'
-    let display = '-webkit-box'
-    let btnText = 'Baca Selengkapnya'
-    const handleClick = e => {
-        const btn = e.target
-        const para = btn.previousElementSibling
-        const innerModal = para.closest('.inner-modal')
+    const expand = () => {
+        const innerModal = expandBtn.closest('.inner-modal')
+        display = 'block'
+        isExpanded = true
 
-        if (display === '-webkit-box') {
-            display = 'block'
-            para.style.display = display
-            modal.style.maxHeight = '100%'
-            btnText = 'Tampilkan Sedikit'
+        innerModal.style.overflowY = 'scroll'
+        para.style.display = display
+        modal.classList.add('modal-expand')
+        btnText = 'Tampilkan Sedikit'
+        innerModal.classList.add('expand')
+    }
+
+    const shrink = () => {
+        const innerModal = expandBtn.closest('.inner-modal')
+        display = '-webkit-box'
+        isExpanded = false
+
+        modal.classList.add('modal-shrink')
+        innerModal.style.overflowY = 'hidden'
+    }
+
+    const handleClick = () => {
+        if (!isExpanded) {
+            expand()
         } else {
-            innerModal.scrollTop = 0
-            modal.style.maxHeight = initialHeight
-            setTimeout(() => {
-                display = '-webkit-box'
-                para.style.display = display
-                btnText = 'Baca Selengkapnya'
-            }, 400);
+            shrink()
         }
     }
 
-    onMount(() => {
-        modal = document.querySelector('.modal')
+    const handleBackdrop = e => {
+        const target = e.target
+
+        if (target.classList.contains('closing')) {
+            target.classList.remove('closing')
+            showModal = false
+        }
+    }
+
+    const handleModal = e => {
+        const target = e.target
+
+        if (target.classList.contains('modal-shrink')) {
+            para.style.display = display
+            btnText = 'Baca Selengkapnya'
+
+            target.classList.remove('modal-expand')
+            target.classList.remove('modal-shrink')
+        }
+    }
+
+    afterUpdate(() => {
+        if (showModal && first) {
+            first = false
+            initialHeight = `${modal.offsetHeight}px`
+            modal.style.setProperty('--mh-initial', initialHeight)
+        }
     })
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="backdrop" on:click|self={closeModal} transition:fade={{ duration: 300, easing: cubicInOut }}>
-    <div class="modal">
+<div class="backdrop opening" bind:this={backdrop} on:click|self={closeModal} on:animationend={handleBackdrop} style:display={showModal ? 'grid' : 'none'}>
+    <div class="modal" bind:this={modal} on:animationend={handleModal}>
         <header class="modal-header">
             <img src={imgBig} alt={title}>
             <button on:click={closeModal}>
@@ -54,8 +95,8 @@
         </header>
         <section class="inner-modal">
             <h4>{title}</h4>
-            <p>{desc}</p>
-            <button on:click={handleClick}>{btnText}</button>
+            <p bind:this={para}>{desc}</p>
+            <button bind:this={expandBtn} on:click={handleClick}>{btnText}</button>
         </section>
     </div>
 </div>
@@ -73,13 +114,67 @@
         z-index: 30;
     }
 
+    :global(.opening) {
+        animation: opening 0.3s ease-in;
+    }
+
+    @keyframes -global-opening {
+        from {
+            opacity: 0
+        }
+        to {
+            opacity: 1
+        }
+    }
+
+    :global(.closing) {
+        animation: closing 0.3s ease-in;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes -global-closing {
+        0% {
+            opacity: 1
+        }
+        100% {
+            opacity: 0
+        }
+    }
+
     .modal {
         width: 100%;
-        max-height: 361px;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
         border-radius: 12px;
         background: white;
         overflow: hidden;
-        transition: max-height 0.3s ease-in;
+    }
+    
+    :global(.modal-expand) {
+        animation: expand 0.3s ease-in;
+    }
+
+    @keyframes -global-expand {
+        0% {
+            max-height: var(--mh-initial)
+        }
+        100% {
+            max-height: 100%
+        }
+    }
+    
+    :global(.modal-shrink) {
+        animation: shrink 0.3s ease-in;
+    }
+
+    @keyframes -global-shrink {
+        0% {
+            max-height: 100%
+        }
+        100% {
+            max-height: var(--mh-initial)
+        }
     }
 
     .modal header {
@@ -100,8 +195,7 @@
 
     .modal .inner-modal {
         padding: 20px 16px;
-        max-height: 65vh;
-        overflow-y: scroll;
+        max-height: 55vh;
         scroll-behavior: smooth;
     }
 

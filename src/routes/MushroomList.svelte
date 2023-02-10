@@ -2,13 +2,18 @@
     import Modal from './Modal.svelte'
     import Headline from './Headline.svelte'
     import mushrooms from './jamur.js'
-    
+
     let showModal = false
     let modalData
+    let modals = []
+    mushrooms.forEach(() => {
+        modals = [...modals, false]
+    })
 
-    const openModal = (data) => {
-        modalData = data
-        showModal = true
+    const openModal = (e) => {
+        const btn = e.target.closest('button')
+        const index = btn.dataset.index
+        modals[index] = true
     }
 </script>
 
@@ -17,9 +22,9 @@
 
     <div class="list-container">
         <ul class="list">
-            {#each mushrooms as {title, img, imgBig, desc}}
+            {#each mushrooms as {title, img, imgBig, desc}, i}
                 <li class="list-item">
-                    <button on:click={() => openModal({title, imgBig, desc})}>
+                    <button on:click={openModal} data-index={i}>
                         <div class="list-img">
                             <img src={img} alt={title}>
                         </div>
@@ -31,10 +36,8 @@
                     </button>
                 </li>
 
+                <Modal modalData={{ title, imgBig, desc }} bind:showModal={modals[i]} />
             {/each}
-            {#if showModal}
-                <Modal bind:modalData bind:showModal />
-            {/if}
         </ul>
     </div>
 
