@@ -8,6 +8,6 @@
 
 <style>
     main {
-        margin: 16px 16px 60px;
+        margin: 16px 16px 120px;
     }
 </style>
