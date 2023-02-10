@@ -8,6 +8,6 @@
 
 <style>
     main {
-        margin: 16px 16px 120px;
+        padding: 16px 16px 100px;
     }
 </style>
