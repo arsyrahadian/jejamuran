@@ -69,6 +69,10 @@ svg {
 }
 
 /* styling */
+html {
+    scrollbar-gutter: stable;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
 }
